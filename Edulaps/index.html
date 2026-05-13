@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema Help Desk Edu Labs">
+  <title>Edu Labs Help Desk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="barra-superior">
+    <h1>Edu Labs Help Desk</h1>
+  </header>
+
+  <main class="contenedor-principal">
+
+    <section class="columna-formulario">
+      <article class="tarjeta">
+        <h2>Nuevo Ticket</h2>
+
+        <form id="form-nuevo-ticket">
+
+          <input
+            type="text"
+            id="titulo"
+            placeholder="Título del problema"
+            class="campo-texto"
+            required
+          >
+
+          <section class="recuadro-ia">
+            <small>✨ IA de apoyo</small>
+            <p>Categoría: <strong id="ia-cat">Analizando...</strong></p>
+            <p>Prioridad: <strong id="ia-prio">-</strong></p>
+          </section>
+
+          <textarea
+            id="descripcion"
+            placeholder="Describe tu problema"
+            class="campo-area"
+            required
+          ></textarea>
+
+          <section class="fila-doble">
+            <input
+              type="text"
+              id="usuario"
+              placeholder="Tu nombre"
+              class="campo-texto"
+            >
+
+            <select id="prioridad-selector" class="campo-texto">
+              <option value="ticketurgente">Software</option>
+              <option value="ticketnormal">Redes</option>
+              <option value="ticketpuedeesperar">Hardware</option>
+            </select>
+          </section>
+
+          <button class="boton-enviar" type="submit">
+            Crear ticket
+          </button>
+
+        </form>
+      </article>
+    </section>
+
+    <section class="columna-listado">
+      <h2>Gestión de tickets</h2>
+      <section id="lista-tickets"></section>
+    </section>
+
+  </main>
+
+  <aside class="ventana-chat">
+    <header class="chat-titulo">Asistente Virtual</header>
+
+    <section class="chat-cuerpo oculto"></section>
+
+    <footer class="chat-pie oculto">
+      <input type="text" id="mensaje-usuario" placeholder="Escribe aquí">
+      <button id="btn-enviar">Enviar</button>
+    </footer>
+  </aside>
+
+  <script src="desplegue.js"></script>
+</body>
+</html>
